@@ -1,0 +1,1 @@
+SELECT. 'Postagres is ready' AS status;
