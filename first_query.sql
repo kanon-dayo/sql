@@ -1,4 +1,4 @@
-##SELECT statement
+--SELECT statement
 SELECT 'Postagres is ready' AS status;
 SELECT * FROM actor;
 SELECT first_name FROM actor;
@@ -21,10 +21,31 @@ SELECT * FROM film
 WHERE rating != 'R';
 SELECT * FROM customer
 WHERE first_name = 'Nancy' AND last_name = 'Thomas';
-#modified
+--modified
 SELECT email FROM customer
 WHERE first_name = 'Nancy' AND last_name = 'Thomas';
 SELECT description FROM film
 WHERE title = 'Outlaw Hanky';
 SELECT phone FROM address
 WHERE address = '259 Ipoh Drive';
+--2026/02/08
+SELECT title FROM film
+ORDER BY length
+LIMIT 5;
+--Automatically shows "ASC"
+SELECT title, length FROM film
+ORDER BY length ASC
+LIMIT 5;
+SELECT title, length FROM film
+WHERE length <= 50
+ORDER BY length DESC
+LIMIT 50;
+--If the previous customer can watch any movie that is 50 minutes or less in run time, how many options does she have?
+SELECT count(title) FROM film
+WHERE length <= 50;
+--We want to reward our first 10 paying customers. What are the customer IDs of the first 10 customers who created a payment.
+--NOTE: This question asks for data in chronological order.
+--Key insight: Sort by time, not amount, to find the "first" customers.
+SELECT customer_id FROM payment
+ORDER BY payment_date ASC
+LIMIT 10;
