@@ -49,3 +49,10 @@ WHERE length <= 50;
 SELECT customer_id FROM payment
 ORDER BY payment_date ASC
 LIMIT 10;
+--2026/02/10
+SELECT * FROM payment
+WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15'
+--未満で出力される。
+ORDER BY payment_date ASC;
+SELECT * FROM customer
+WHERE first_name NOT IN ('John','Jake','Julie');
