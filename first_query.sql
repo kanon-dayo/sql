@@ -56,3 +56,5 @@ WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15'
 ORDER BY payment_date ASC;
 SELECT * FROM customer
 WHERE first_name NOT IN ('John','Jake','Julie');
+SELECT * FROM customer
+WHERE first_name LIKE 'J%' AND last_name LIKE 'S%';
