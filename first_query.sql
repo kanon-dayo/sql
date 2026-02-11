@@ -58,3 +58,19 @@ SELECT * FROM customer
 WHERE first_name NOT IN ('John','Jake','Julie');
 SELECT * FROM customer
 WHERE first_name LIKE 'J%' AND last_name LIKE 'S%';
+--2026/2/11
+--better to use * than `first_name`
+SELECT COUNT(*) FROM actor
+WHERE first_name LIKE 'P%';
+--How many unique districts are our customers from?
+SELECT COUNT(DISTINCT(district)) FROM address;
+SELECT COUNT(*) FROM film
+WHERE rating = 'R' AND replacement_cost BETWEEN 5.00 AND 15.00;
+SELECT COUNT(title) FROM film
+WHERE title Like ('%Truman%');
+SELECT MAX(replacement_cost),MIN(replacement_cost)
+FROM film;
+SELECT ROUND(AVG(replacement_cost),2)
+FROM film;
+SELECT SUM(replacement_cost)
+FROM film;
