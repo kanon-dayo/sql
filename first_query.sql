@@ -74,3 +74,26 @@ SELECT ROUND(AVG(replacement_cost),2)
 FROM film;
 SELECT SUM(replacement_cost)
 FROM film;
+--2026/2/12
+--the most syntex would be like 
+SELECT category_col, AGG(data_col)
+FROM table
+GROUP BY category_col;
+SELECT company, division SUM(sales)
+FROM finance_table
+WHERE divition IN ('marketing')
+GROUP BY company, division
+ORDER BY SUM(sale)
+LIMIT 5;
+SELECT customer_id, SUM(amount) FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC;
+SELECT rating, ROUND(AVG(replacement_cost),2) 
+FROM film
+GROUP BY rating
+ORDER BY ROUND(AVG(replacement_cost),2) DESC;
+SELECT customer_id, SUM(amount) 
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+LIMIT 5;
